@@ -17,6 +17,36 @@
 */
 function validateMove(move, board) {
   // Implement this at the end if you have time, otherwise you can help your teammates!
+
+  // First, I need to split the 'move' parameter into an array of strings, then convert each one into a number.
+  const [row, column] = move.split(",").map(Number);
+
+  // Then, I need to check if the row and column are valid numbers(1, 2, or 3).
+  if (
+    isNaN(row) ||
+    isNaN(column) ||
+    row < 1 ||
+    row > 3 ||
+    column < 1 ||
+    column > 3
+  ) {
+    // If not, I will output 'Try again...' and return false.
+    console.log("Try again...");
+    return false;
+  }
+
+  /// Then I need to assign the correct indexes to the row and column variables, as numbers and indexes are different by creating two variables.
+  const rowIndex = row - 1;
+  const columnIndex = column - 1;
+
+  // Finally, I need to check if the space on the board is free.
+  if (board[rowIndex][columnIndex] !== "_") {
+    // If not, I will output 'Try again...' and return false.
+    console.log("Try again...");
+    return false;
+  }
+  // If all conditions are met and the move is valid, I will return true.
+  console.log("Valid move!");
   return true;
 }
 
