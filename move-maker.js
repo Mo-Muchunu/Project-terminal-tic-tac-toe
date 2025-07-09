@@ -16,8 +16,8 @@
         ];
 */
 function validateMove(move, board) {
-    // Implement this at the end if you have time, otherwise you can help your teammates!
-    return true;
+  // Implement this at the end if you have time, otherwise you can help your teammates!
+  return true;
 }
 
 /*
@@ -32,5 +32,20 @@ function validateMove(move, board) {
             - Return true
 */
 export function makeMove(board, move, player) {
+  // First, I'm writing the makeMove function using the validateMove function in case of the move being not valid
+  if (!validateMove(move, board)) {
     return false;
+  }
+
+  // Second, after making sure the move is valid, I'll declare a variable to split the parameter 'move' into a array of strings, then converts each one in a number.
+  // Then, I will assign each number to a variable row and column.
+  const [row, column] = move.split(",").map(Number);
+
+  // Then I need to assign the correct indexes to the row and column variables, as numbers and indexes are different.
+  const rowIndex = row - 1;
+  const columnIndex = column - 1;
+
+  //Finally, I need to reflect the player's move on the board illustrated by 'rowIndex' and 'columnIndex' in an empty space by using his value(O or X).
+  board[rowIndex][columnIndex] = player;
+  return true;
 }
