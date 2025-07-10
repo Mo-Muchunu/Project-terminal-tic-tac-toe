@@ -15,7 +15,7 @@
             ['O', 'O', 'X']
         ];
 */
-function validateMove(move, board) {
+export function validateMove(move, board) {
   // Implement this at the end if you have time, otherwise you can help your teammates!
 
   // First, I need to split the 'move' parameter into an array of strings, then convert each one into a number.
