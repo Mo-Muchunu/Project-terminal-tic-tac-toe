@@ -2,7 +2,7 @@
   "name": "tic-tac-toe",
   "version": "1.0.0",
   "description": "",
-  
+  "type": "module",
   "main": "play.js",
   "scripts": {
     "test": "jest"
