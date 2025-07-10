@@ -1,4 +1,4 @@
-import { validateMove, makeMove } from "../move-maker.js";
+const { validateMove, makeMove } = require("../move-maker");
 
 describe("validateMove", () => {
   const sampleBoard = [

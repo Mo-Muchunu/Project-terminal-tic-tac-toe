@@ -2,10 +2,9 @@
   "name": "tic-tac-toe",
   "version": "1.0.0",
   "description": "",
-  "type": "module",
   "main": "play.js",
   "scripts": {
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+    "test": "jest"
   },
   "author": "",
   "license": "ISC",

@@ -15,7 +15,7 @@
             ['O', 'O', 'X']
         ];
 */
-export function validateMove(move, board) {
+function validateMove(move, board) {
   // Implement this at the end if you have time, otherwise you can help your teammates!
 
   // First, I need to split the 'move' parameter into an array of strings, then convert each one into a number.
@@ -61,7 +61,7 @@ export function validateMove(move, board) {
             - Update the board with the player's value ('X' or 'O') in the correct position
             - Return true
 */
-export function makeMove(board, move, player) {
+function makeMove(board, move, player) {
   // First, I'm writing the makeMove function using the validateMove function in case of the move being not valid
   if (!validateMove(move, board)) {
     return false;
@@ -79,3 +79,5 @@ export function makeMove(board, move, player) {
   board[rowIndex][columnIndex] = player;
   return true;
 }
+
+module.exports = { validateMove, makeMove };
