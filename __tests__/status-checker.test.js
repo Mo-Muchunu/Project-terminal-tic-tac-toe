@@ -1,9 +1,12 @@
-const { isGameOver } = require("../status-checker");
+import { jest } from "@jest/globals";
 
-jest.mock("../board-printer.js", () => ({
+// ESM-compatible mock for checkIfNoMovesLeft
+jest.unstable_mockModule("../board-printer.js", () => ({
   checkIfNoMovesLeft: (board) =>
     board.every((row) => row.every((cell) => cell !== "_")),
 }));
+
+const { isGameOver } = await import("../status-checker");
 
 describe("isGameOver", () => {
   test("returns true when X wins by row", () => {

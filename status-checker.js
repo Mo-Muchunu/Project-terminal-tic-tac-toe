@@ -1,4 +1,4 @@
-const { checkIfNoMovesLeft } = require("./board-printer.js");
+import { checkIfNoMovesLeft } from "./board-printer.js";
 
 /*
     Example board:
@@ -88,4 +88,4 @@ function isGameOver(board) {
   return false;
 }
 
-module.exports = { isGameOver };
+export { isGameOver };

@@ -15,8 +15,7 @@
         =================
     Test your function by calling it with an example tic-tac-toe board.
 */
-export function printBoard(board) {
-}
+export function printBoard(board) {}
 
 /*
     Given a tic-tac-toe board (an array of arrays),
@@ -24,4 +23,5 @@ export function printBoard(board) {
         - return false if there are still moves that can be made
 */
 export function checkIfNoMovesLeft(board) {
+  return board.every((row) => row.every((cell) => cell !== "_"));
 }
