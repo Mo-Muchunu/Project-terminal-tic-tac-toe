@@ -1,7 +1,7 @@
-import prompt from 'prompt';
-import { isGameOver } from './status-checker.js';
-import { makeMove } from './move-maker.js';
-import { printBoard } from './board-printer.js';
+const prompt = require('prompt');
+const { isGameOver } = require("./status-checker.js");
+const { makeMove } = require("./move-maker.js");
+const { printBoard } = require("./board-printer.js");
 
 prompt.message = '';
 prompt.start();
@@ -15,13 +15,13 @@ async function playGame() {
         ['_', '_', '_']
     ];
 
-    while(!isGameOver(board)) {
+    while (!isGameOver(board)) {
         let player = moveNumber % 2 === 0 ? 'X' : 'O';
         let move;
-        
+
         do {
             move = await getMove(player);
-        } while(!makeMove(board, move, player));
+        } while (!makeMove(board, move, player));
 
         printBoard(board);
         moveNumber++;
