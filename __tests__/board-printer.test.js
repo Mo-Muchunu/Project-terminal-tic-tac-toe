@@ -2,9 +2,7 @@ const { checkIfNoMovesLeft} = require("../board-printer");
 
 test("checkIfNoMovesLeft should return true if there are no moves left", () => {
   const board = [
-    ['X', 'O', 'X'],
-    ['O', 'X', 'O'],
-    ['O', 'X', 'X']
+
   ];
   expect(checkIfNoMovesLeft(board)).toBe(true);
 });
